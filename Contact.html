@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | May KDL_COLLECTION</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #222;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 75px;
+
+            background: #080808;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #e6c47a;
+        }
+
+        .header-icons {
+            display: flex;
+
+            gap: 20px;
+
+            font-size: 22px;
+        }
+
+        /* =========================
+           CONTACT HERO
+        ========================= */
+
+        .contact-hero {
+
+            width: 85%;
+            height: 250px;
+
+            margin: 0 auto;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.68),
+                    rgba(0,0,0,0.68)
+                ),
+                url("images/banner.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .contact-hero h1 {
+
+            font-family: Georgia, serif;
+
+            font-size: 48px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-hero p {
+
+            font-size: 16px;
+
+            color: #eee;
+        }
+
+        /* =========================
+           CONTACT SECTION
+        ========================= */
+
+        .contact-section {
+
+            width: 85%;
+
+            margin: 45px auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.5fr;
+
+            gap: 35px;
+        }
+
+        /* =========================
+           CONTACT INFORMATION
+        ========================= */
+
+        .contact-info {
+
+            background: #080808;
+
+            color: white;
+
+            padding: 35px;
+        }
+
+        .contact-info h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+
+            color: #e6c47a;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+
+            color: #ccc;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+
+            width: 40px;
+            height: 40px;
+
+            background: #e6c47a;
+
+            color: #111;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+
+            flex-shrink: 0;
+        }
+
+        .info-item h3 {
+
+            margin-bottom: 5px;
+
+            font-size: 16px;
+        }
+
+        .info-item p {
+
+            color: #bbb;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        /* =========================
+           SOCIAL MEDIA
+        ========================= */
+
+        .social-title {
+
+            margin-top: 30px;
+
+            color: #e6c47a;
+
+            font-size: 16px;
+        }
+
+        .socials {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 15px;
+        }
+
+        .socials a {
+
+            width: 38px;
+            height: 38px;
+
+            background: white;
+
+            color: #111;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .socials a:hover {
+
+            background: #e6c47a;
+        }
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        .contact-form {
+
+            background: white;
+
+            padding: 35px;
+
+            border: 1px solid #ddd;
+        }
+
+        .contact-form h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-form > p {
+
+            color: #666;
+
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 3px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #b38a3c;
+        }
+
+        .form-group textarea {
+
+            height: 130px;
+
+            resize: vertical;
+        }
+
+        .send-button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            background: #080808;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            border-radius: 3px;
+
+            font-size: 15px;
+        }
+
+        .send-button:hover {
+
+            background: #b38a3c;
+        }
+
+        /* =========================
+           BUSINESS HOURS
+        ========================= */
+
+        .hours {
+
+            width: 85%;
+
+            margin: 0 auto 45px;
+
+            background: #eee6d6;
+
+            padding: 35px;
+
+            text-align: center;
+        }
+
+        .hours h2 {
+
+            font-family: Georgia, serif;
+
+            margin-bottom: 20px;
+        }
+
+        .hours-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            max-width: 800px;
+
+            margin: auto;
+
+            gap: 20px;
+        }
+
+        .day {
+
+            background: white;
+
+            padding: 20px;
+
+            border: 1px solid #ddd;
+        }
+
+        .day h3 {
+
+            margin-bottom: 8px;
+        }
+
+        .day p {
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #080808;
+
+            color: white;
+
+            padding: 40px 8%;
+        }
+
+        .footer-container {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 2fr 1fr;
+
+            gap: 40px;
+        }
+
+        footer h3 {
+
+            color: #e6c47a;
+
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+
+            color: #ccc;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            text-decoration: none;
+        }
+
+        .footer-socials {
+
+            display: flex;
+
+            gap: 15px;
+
+            font-size: 20px;
+        }
+
+        .copyright {
+
+            border-top: 1px solid #333;
+
+            margin-top: 30px;
+
+            padding-top: 15px;
+
+            text-align: center;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 0 3%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .contact-section {
+
+                width: 92%;
+
+                grid-template-columns: 1fr;
+            }
+
+            .hours {
+
+                width: 92%;
+            }
+
+            .footer-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                height: auto;
+
+                padding: 15px;
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+            nav {
+
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .contact-hero {
+
+                width: 95%;
+
+                height: 220px;
+            }
+
+            .contact-hero h1 {
+
+                font-size: 35px;
+            }
+
+            .contact-section {
+
+                width: 92%;
+            }
+
+            .contact-info,
+            .contact-form {
+
+                padding: 25px;
+            }
+
+            .hours {
+
+                width: 92%;
+            }
+
+            .hours-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <img
+                src="images/logo.png"
+                alt="May KDL_COLLECTION Logo">
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="header-icons">
+
+            <span>⌕</span>
+
+            <span>🛒</span>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         CONTACT HERO
+    ========================== -->
+
+    <section class="contact-hero">
+
+        <div>
+
+            <h1>
+                Contact Us
+            </h1>
+
+            <p>
+                We'd love to hear from you.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+
+    <section class="contact-section">
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h2>
+                Get In Touch
+            </h2>
+
+            <p>
+                Have a question about our products,
+                orders or catalogue? Send us a message
+                and we'll be happy to help.
+            </p>
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    📞
+                </div>
+
+                <div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        <a href="tell;+2348158932511"> 815 893 2511</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <h3>
+                        Whatsapp
+                    </h3>
+
+                    <p>
+                        <a href="https;//wa.me/2348158932511">+234 815 893 2511</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    📍
+                </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        maykdlcollection@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h3>
+                        Location
+                    </h3>
+
+                    <p>
+                        Nigeria
+                    </

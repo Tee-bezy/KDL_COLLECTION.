@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KDL_COLLECTION | Catalogue</title>
+
+
+    <script>
+
+function addToCart(name, price, image, category) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check whether product already exists
+
+    let existingProduct = cart.find(
+        product => product.name === name
+    );
+
+    if (existingProduct) {
+
+        existingProduct.quantity += 1;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+
+            price: price,
+
+            image: image,
+
+            category: category,
+
+            quantity: 1
+
+        });
+
+    }
+
+    // Save cart
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    alert(name + " has been added to your cart!");
+
+}
+
+</script>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #222;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 75px;
+            background: #080808;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #d8b56d;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 22px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            width: 85%;
+            height: 295px;
+            margin: 0 auto;
+
+            background-image:
+                linear-gradient(
+                    to right,
+                    rgba(0,0,0,0.9),
+                    rgba(0,0,0,0.25)
+                ),
+                url("images/logo.png");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            padding: 50px;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 450px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .shop-btn {
+            background: #e6c47a;
+            color: #111;
+
+            padding: 12px 25px;
+
+            border: none;
+            border-radius: 4px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .shop-btn:hover {
+            background: white;
+        }
+
+        /* =========================
+           MAIN AREA
+        ========================= */
+
+        .main {
+            width: 85%;
+            margin: 20px auto;
+
+            display: grid;
+
+            grid-template-columns: 200px 1fr;
+
+            gap: 25px;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .sidebar h3 {
+            background: #eee0c5;
+            padding: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            background: #f2eee5;
+        }
+
+        .arrival {
+            margin-top: 20px;
+
+            height: 170px;
+
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.35)
+                ),
+                url("images/arrivals.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .arrival h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .arrival button {
+            width: 90px;
+
+            padding: 8px;
+
+            border: none;
+            background: white;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           CATALOGUE
+        ========================= */
+
+        .catalogue {
+            background: white;
+            padding: 20px;
+        }
+
+        .catalogue-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .catalogue-top h2 {
+            font-size: 30px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search {
+            width: 250px;
+
+            padding: 10px;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .sort {
+            padding: 10px;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+
+            background: white;
+
+            padding-bottom: 12px;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+
+            object-fit: cover;
+        }
+
+        .heart {
+            position: absolute;
+
+            right: 10px;
+            top: 10px;
+
+            background: white;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-info h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cart-btn {
+            width: 100%;
+
+            padding: 9px;
+
+            background: #111;
+            color: white;
+
+            border: none;
+            border-radius: 3px;
+
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background: #333;
+        }
+
+        /* =========================
+           PAGINATION
+        ========================= */
+
+        .pagination {
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+        .pagination button {
+            padding: 8px 12px;
+
+            margin: 3px;
+
+            border: 1px solid #ccc;
+            background: white;
+
+            cursor: pointer;
+        }
+
+        .pagination button:first-child {
+            background: #111;
+            color: white;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #080808;
+            color: white;
+
+            margin-top: 40px;
+
+            padding: 40px 8%;
+        }
+
+        .footer-container {
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 2fr 1fr;
+
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+            color: #e6c47a;
+        }
+
+        footer p,
+        footer a {
+            color: #ccc;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            text-decoration: none;
+        }
+
+        .socials {
+            display: flex;
+            gap: 15px;
+
+            font-size: 20px;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+
+            margin-top: 30px;
+
+            padding-top: 15px;
+
+            text-align: center;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 0 3%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .hero {
+                width: 95%;
+            }
+
+            .main {
+                width: 95%;
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                height: auto;
+                padding: 15px;
+
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .hero {
+                height: 300px;
+                padding: 25px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .catalogue-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .controls {
+                width: 100%;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            <img src="images/logo.png"
+                 alt="KDL Collection Logo">
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="Catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="About.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="Cart.html">
+                cart🛒
+            </a>
+
+        </nav>
+
+        <div class="header-icons">
+
+            <span>⌕</span>
+
+            <span>🛒</span>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                May KDL_COLLECTION
+            </h1>
+
+            <p>
+                Classy • Modern • Affordable
+                <br>
+                Trendy outfits for every you.
+            </p>
+
+            <button class="shop-btn">
+                Shop Now →
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <div class="main">
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+            <div class="sidebar">
+
+                <h3>
+                    🏠 All Products
+                </h3>
+
+                <ul>
+
+                    <li><a href="man.html"> 👕 Men's Wear</a></li>
+
+                    <li><a href="giirl.html"> 👗 Women's Wear</a></li>
+
+                    <li>🧕 Hijabs</li>
+
+                    <li>👖 Trousers & Bottoms</li>
+
+                    <li>👕 Tops & Shirts</li>
+
+                    <li>🧥 Jackets & Hoodies</li>
+
+                    <li>👜 Accessories</li>
+
+                </ul>
+
+            </div>
+
+            <div class="arrival">
+
+                <h3>
+                    New Arrivals
+                </h3>
+
+                <p>
+                    Fresh styles just for you.
+                </p>
+
+                <br>
+
+                <button>
+                    View All →
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- CATALOGUE -->
+
+        <section class="catalogue">
+
+            <div class="catalogue-top">
+
+                <h2>
+                    Our Catalogue
+                </h2>
+
+                <div class="controls">
+
+                    <input
+                        class="search"
+                        type="search"
+                        placeholder="Search for a product..."
+                    >
+
+                    <select class="sort">
+
+                        <option>
+                            Sort by: Latest
+                        </option>
+
+                        <option>
+                            Price: Low to High
+                        </option>
+
+                        <option>
+                            Price: High to Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCTS -->
+
+            <div class="products">
+
+                <!-- PRODUCT 1 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/scarf 1.png"
+                        alt="Elegant Abaya"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Elegant Abaya (Black)
+                        </h3>
+
+                        <p class="price">
+                            ₦25,000
+                        </p>
+
+                        <button
+                          class="add-cart"
+                            onclick="addToCart(
+                                'Elegant Abaya',
+                                25000,
+                                'images/scarf 1.png',
+                                'women\\'
+                                )"
+                        >        
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 2 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/men baggy trouser 2.png"
+                        alt="Men baggy trouser"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Men's baggy trouser
+                        </h3>
+
+                        <p class="price">
+                            ₦8,000
+                        </p>
+                        
+                        <button 
+                        class="add-cart"
+                            onclick="addToCart(
+                                'men baggy trouser',
+                                 8000,
+                                'images/men baggy trouser 2.png',
+                                'men\\'
+                                )">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 3 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/girl baggy  trouser.png"
+                        alt="Ladies baggy"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Ladies baggy Trouser
+                        </h3>
+
+                        <p class="price">
+                            ₦18,000
+                        </p>
+
+                        <button
+                        class="add-cart"
+                            onclick="addToCart(
+                                'Ladies Baggy & Top',
+                                18000,
+                                'images/girl baggy  trouser.png',
+                                'women\\'
+                                )">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 4 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/men up & down 2.png"
+                        alt="Men top and trouser"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Men's Varsity Hoodies and baggy trouser
+                        </h3>
+
+                        <p class="price">
+                            ₦22,000
+                        </p>
+
+                        <button
+                          class="add-cart"
+                            onclick="addToCart(
+                                'men varsity Hoodies and baggy trouser',
+                                25000,
+                                'images/men up & down 2.png',
+                                'men\\'
+                                )"
+                        >        
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 5 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/hijab.png"
+                        alt="Premium Hijab"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Premium Hijab
+                        </h3>
+
+                        <p class="price">
+                            ₦5,000
+                        </p>
+
+                        <button
+                        class="add-cart"
+                            onclick="addToCart(
+                                'Premium Hijab',
+                                 5000,
+                                'images/hijab.png',
+                                'women\\'
+                                )">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 6 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/men baggy trouser.png"
+                        alt="Cargo Trousers"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Cargo Trousers
+                        </h3>
+
+                        <p class="price">
+                            ₦16,000
+                        </p>
+
+                        <button
+                        class="add-cart"
+                            onclick="addToCart(
+                                'cargo trouser',
+                                 16000,
+                                'images/men baggy trouser.png',
+                                'men\\'
+                                )">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 7 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/baggy top 1.png"
+                        alt="Classic TOP"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Men's Classic top
+                        </h3>
+
+                        <p class="price">
+                            ₦8,000
+                        </p>
+
+                        <button
+                        class="add-cart"
+                            onclick="addToCart(
+                                'men classic Top',
+                                 8000,
+                                'images/baggy top 1.png',
+                                'men\\'
+                                )">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 8 -->
+
+                <div class="product">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                    <img
+                        src="images/girl top & trouser 1.png"
+                        alt="camouflag baggy and top"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Classic camouflag baggy and trouser
+                        </h3>
+
+                        <p class="price">
+                            ₦18,000
+                        </p>
+
+                        <button 
+                        class="add-cart"
+                            onclick="addToCart(
+                                'Classic camouflag baggy and trouser',
+                                 18000,
+                                'images/girl top & trouser 1.png',
+                                'women\\'
+                                                                )">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PAGINATION -->
+
+            <div class="pagination">
+
+                <button>1</a></button>
+
+                <button><a href="Catalogue.html">2</a></button>
+
+                <button>3</button>
+
+                <button><a href="Catalogue.html">→</a></button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+
+                <h3>
+                    May KDL_COLLECTION
+                </h3>
+
+                <p>
+                    Classy • Modern • Affordable
+                </p>
+
+                <p>
+                    Quality fashion, always.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <p>
+                    <a href="index.html">HOME🏠</a>
+                </p>
+
+                <p>
+                    <a href="giirl.html">Catalogue🛠️</a>
+                </p>
+
+                <p>
+                    <a href="About.html">Aboutℹ️</a>
+                </p>
+
+                <p>
+                    <a href="Contact.html">Contact📞</a>
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <p>
+                    📞 +234 810 123 4567
+                </p>
+
+                <p>
+                    ✉️ maykdlcollection@gmail.com
+                </p>
+
+                <p>
+                    📍 Lagos, Nigeria
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Follow Us
+                </h3>
+
+                <div class="socials">
+
+                    <span>◎</span>
+
+                    <span>◉</span>
+
+                    <span>♪</span>
+
+                    <span>f</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 May KDL_COLLECTION.
+            All rights reserved.
+
+            <br><br>
+
+            Thank you for supporting our business ❤️
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

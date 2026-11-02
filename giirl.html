@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>👗 Women's Wear | May KDL_COLLECTION</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f5ef;
+            color: #171717;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #111111;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #c9a45c;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 17px;
+        }
+
+        .header-icons i {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .header-icons i:hover {
+            color: #c9a45c;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .catalogue-hero {
+            height: 360px;
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("images/banner.jpg") center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .hero-content p {
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           MAIN CATALOGUE
+        ========================= */
+
+        .catalogue-container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 70px auto;
+            display: grid;
+            grid-template-columns: 230px 1fr;
+            gap: 45px;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .category-list {
+            list-style: none;
+            border-top: 1px solid #ddd;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 14px 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .category-list a:hover,
+        .category-list a.active {
+            color: #b18a45;
+            padding-left: 10px;
+        }
+
+        /* NEW ARRIVALS */
+
+        .new-arrivals {
+            margin-top: 45px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .new-arrivals img {
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .new-arrivals-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 18px;
+            color: white;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .new-arrivals-text span {
+            color: #d2af6a;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .new-arrivals-text h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin-top: 5px;
+        }
+
+        /* =========================
+           CATALOGUE TOP
+        ========================= */
+
+        .catalogue-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 35px;
+            gap: 20px;
+        }
+
+        .catalogue-top h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 500;
+        }
+
+        .catalogue-top p {
+            color: #777;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .catalogue-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 210px;
+            padding: 12px 40px 12px 15px;
+            border: 1px solid #d8d2c8;
+            background: white;
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 14px;
+            top: 13px;
+            color: #777;
+        }
+
+        .sort-box select {
+            padding: 12px 15px;
+            border: 1px solid #d8d2c8;
+            background: white;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* =========================
+           PRODUCTS GRID
+        ========================= */
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px 18px;
+        }
+
+        .product-card {
+            background: white;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            height: 320px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.04);
+        }
+
+        .heart {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 15px;
+            z-index: 2;
+            transition: 0.3s;
+        }
+
+        .heart:hover {
+            background: #111;
+            color: white;
+        }
+
+        .sale-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #111;
+            color: white;
+            padding: 6px 10px;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .product-info {
+            padding: 17px 15px 20px;
+        }
+
+        .product-category {
+            color: #a3834b;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 6px 0;
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 11px;
+            background: #111;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .add-cart:hover {
+            background: #b18a45;
+        }
+
+        /* =========================
+           PAGINATION
+        ========================= */
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 60px;
+        }
+
+        .pagination a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .pagination a:hover,
+        .pagination a.active {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: white;
+            margin-top: 80px;
+            padding: 65px 7% 25px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #bbb;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 350px;
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer li a {
+            color: #bbb;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        footer li a:hover {
+            color: #c9a45c;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #c9a45c;
+            border-color: #c9a45c;
+            color: #111;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .catalogue-container {
+                grid-template-columns: 190px 1fr;
+                gap: 30px;
+            }
+
+            .product-image img {
+                height: 280px;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo h2 {
+                font-size: 17px;
+            }
+
+            .catalogue-hero {
+                height: 280px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .catalogue-container {
+                width: 92%;
+                grid-template-columns: 1fr;
+                margin-top: 45px;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .catalogue-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .catalogue-controls {
+                width: 100%;
+            }
+
+            .search-box {
+                flex: 1;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .sort-box select {
+                width: 100%;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px 12px;
+            }
+
+            .product-image img {
+                height: 250px;
+            }
+
+            .product-info h3 {
+                font-size: 16px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px;
+            }
+        }
+
+        /* =========================
+           SMALL PHONE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .header-icons {
+                gap: 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 12px;
+            }
+
+            .catalogue-top h2 {
+                font-size: 28px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-image img {
+                height: 210px;
+            }
+
+            .product-info {
+                padding: 12px 10px 15px;
+            }
+
+            .product-info h3 {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 13px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+       <script>
+
+function addToCart(name, price, image, category) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check whether product already exists
+
+    let existingProduct = cart.find(
+        product => product.name === name
+    );
+
+    if (existingProduct) {
+
+        existingProduct.quantity += 1;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+
+            price: price,
+
+            image: image,
+
+            category: category,
+
+            quantity: 1
+
+        });
+
+    }
+
+    // Save cart
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+    alert(name + " has been added to your cart!");
+
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+     <header>
+
+        <div class="logo">
+            <img src="images/logo.png"
+                 alt="KDL Collection Logo">
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home</a>
+
+            <a href="Catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="About.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="Cart.html">
+                cart🛒
+            </a>
+
+        </nav>
+
+        <div class="header-icons">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <i class="fa-regular fa-heart"></i>
+
+            <a href="Cart.html">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="catalogue-hero">
+
+        <div class="hero-content">
+
+            <h1>👗 Women's Wear</h1>
+
+            <p>Discover your next favourite style.</p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+        👗 WOMEN'S WEAR
+    ========================== -->
+
+    <main class="catalogue-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>Categories</h3>
+
+            <ul class="category-list">
+
+                <li>
+                    <a href="#" class="active">All Products</a>
+                </li>
+
+                <li>
+                    <a href="man.html">Men's Wear</a>
+                </li>
+
+                <li>
+                    <a href="giirl.html">Women's Wear</a>
+                </li>
+
+                <li>
+                    <a href="#">Hijabs</a>
+                </li>
+
+                <li>
+                    <a href="#">Trousers & Bottoms</a>
+                </li>
+
+                <li>
+                    <a href="#">Tops & Shirts</a>
+                </li>
+
+                <li>
+                    <a href="#">Jackets & Hoodies</a>
+                </li>
+
+                <li>
+                    <a href="#">Accessories</a>
+                </li>
+
+            </ul>
+
+            <!-- NEW ARRIVALS -->
+
+            <div class="new-arrivals">
+
+                <img src="images/scarf 1.png" alt="New Arrivals">
+
+                <div class="new-arrivals-text">
+
+                    <span>JUST IN</span>
+
+                    <h4>New Arrivals</h4>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- PRODUCTS -->
+
+        <section class="catalogue-products">
+
+            <!-- TOP -->
+
+            <div class="catalogue-top">
+
+                <div>
+
+                    <h2>Featured Products</h2>
+
+                    <p>Explore our latest fashion collection.</p>
+
+                </div>
+
+                <div class="catalogue-controls">
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            placeholder="Search products..."
+                        >
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <div class="sort-box">
+
+                        <select>
+
+                            <option>Sort By</option>
+
+                            <option>Newest</option>
+
+                            <option>Price: Low to High</option>
+
+                            <option>Price: High to Low</option>
+
+                            <option>Popular</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT GRID -->
+
+            <div class="products-grid">
+
+                <!-- PRODUCT 1 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/scarf 1.png"
+                            alt="Premium scraf"
+                        >
+
+                        <span class="sale-tag">NEW</span>
+
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Women's Wear
+                        </span>
+
+                        <h3>Premium scarf</h3>
+
+                        <p class="price">₦25,000</p>
+
+                          <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Elegant Abaya',
+                                25000,
+                                'images/scarf 1.png',
+                                'women\\'
+                                )"
+                        >    🛒 Add to Cart    
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 2 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/Mini scarf.png"
+                            alt="Mini scarf"
+                        >
+
+                        <button class="heart">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Women's Wear
+                        </span>
+
+                        <h3>Mini scarf</h3>
+
+                        <p class="price">₦8,000</p>
+
+                          <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Mini scarf',
+                                 8000,
+                                'images/Mini scarf.png',
+                                'women\\'
+                                )"
+                        >    Add to Cart    
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 3 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/crop top & trouser 1.png"
+                            alt="Palazzo and Top"
+                        >
+
+                        <span class="sale-tag">NEW</span>
+
+                        <button class="heart">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Women's Wear
+                        </span>
+
+                        <h3>Palazzo & Top</h3>
+
+                        <p class="price">₦18,000</p>
+
+                          <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Palazzo & Top',
+                                 18000,
+                                'images/crop top & trouser 1.png',
+                                'women\\'
+                                )"
+                        >    🛒 Add to Cart    
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 4 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/Nabeelah hijab.png"
+                            alt="Classic hijab"
+                        >
+
+                        <button class="heart">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            hijab
+                        </span>
+
+                        <h3>Classic Hijab</h3>
+
+                        <p class="price">₦5,000</p>
+
+                         <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Classic hijab',
+                                22000,
+                                'images/nabeelah hijab.png',
+                                'Women\\'
+                                )"
+                        >    🛒 Add to Cart 
+                         </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 5 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/hijab 1.png"
+                            alt="Premium Hijab"
+                        >
+
+                        <span class="sale-tag">NEW</span>
+
+                         
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Hijabs
+                        </span>
+
+                        <h3>Premium Hijab</h3>
+
+                        <p class="price">₦5,000</p>
+
+                          <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Premium Hijab',
+                                5000,
+                                'images/hijab 1.png',
+                                'women\\'
+                                )"
+                        >    🛒 Add to Cart    
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 6 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/hijab.png"
+                            alt="cream_color_Hijab"
+                        >
+
+                        <button class="heart">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Hijab
+                        </span>
+
+                        <h3>Cream_Color_Hijab</h3>
+
+                        <p class="price">₦10,000</p>
+
+                         <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Cream_Color_Hijab',
+                                10000,
+                                'images/hijab.png',
+                                'women\\'
+                                )"
+                        >    🛒 Add to Cart    
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 7 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/crop top & trouser.png"
+                            alt="Classic Palazzo set"
+                        >
+
+                        <button class="heart">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Women's Wear
+                        </span>
+
+                        <h3>Yellow_Set_Of_Baggy</h3>
+
+                        <p class="price">₦14,000</p>
+
+                         <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Yellow_Set_Of_Baggy',
+                                 14000,
+                                'images/crop top & trouser.png',
+                                'Women\\'
+                                )"
+                        >    🛒 Add to Cart    
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT 8 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/crop top & trouser 1.png"
+                            alt="Black_Set_Of_Baggy"
+                        >
+
+                        <span class="sale-tag">NEW</span>
+
+                        <button class="heart">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Women's Wear
+                        </span>
+
+                        <h3>Black_Set_Of_Baggy</h3>
+
+                        <p class="price">₦14,000</p>
+
+                                                 <button
+                           class="add-cart"
+                            onclick="addToCart(
+                                'Black_Set_Of_Baggy',
+                                 12000,
+                                'images/crop top & trouser 1.png',
+                                'women\\'
+                                )"
+                        >    🛒 Add to Cart    
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PAGINATION -->
+
+            <div class="pagination">
+
+                <a href="#"class="active">1</a>
+
+                <a href="man.html">2</a>
+
+                <a href="giirl.html">3</a>
+
+                <a href="catalogue1.html">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <h2>May KDL_COLLECTION</h2>
+
+                <p>
+                    Classic fashion, modern elegance.
+                    Discover carefully selected styles
+                    made to help you look and feel your best.
+                </p>
+
+            </div>
+
+            <!-- QUICK LINKS -->
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="catalogue.html">Catalogue</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- CONTACT -->
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="tel:+2348101234567">
+                            +234 810 123 4567
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:maykdlcollection@gmail.com">
+                            maykdlcollection@gmail.com
+                        </a>
+                    </li>
+
+                    <li>
+                        Nigeria
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- SOCIAL -->
+
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 May KDL_COLLECTION.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

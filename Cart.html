@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | May KDL_COLLECTION</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f7f3ec;
+            color: #111;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c7a45d;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 18px;
+        }
+
+        /* ================= PAGE TITLE ================= */
+
+        .page-title {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .page-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= CART ================= */
+
+        .cart-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 70px;
+        }
+
+        .cart-items {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item img {
+            width: 120px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .product-category {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* ================= QUANTITY ================= */
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .quantity-control button {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .quantity-control button:hover {
+            background: #111;
+            color: white;
+        }
+
+        .quantity-control span {
+            min-width: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* ================= REMOVE BUTTON ================= */
+
+        .remove-btn {
+            border: none;
+            background: transparent;
+            color: #777;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .remove-btn:hover {
+            color: #b00020;
+        }
+
+        /* ================= SUMMARY ================= */
+
+        .cart-summary {
+            margin-top: 25px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .summary-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .summary-text p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .total {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .cart-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .continue-btn,
+        .checkout-btn {
+            padding: 14px 25px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .continue-btn {
+            background: #e5dfd3;
+            color: #111;
+        }
+
+        .continue-btn:hover {
+            background: #d4cbbb;
+        }
+
+        .checkout-btn {
+            background: #111;
+            color: white;
+        }
+
+        .checkout-btn:hover {
+            background: #c7a45d;
+            color: #111;
+        }
+
+        /* ================= EMPTY CART ================= */
+
+        .empty-cart {
+            text-align: center;
+            padding: 70px 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .empty-cart i {
+            font-size: 50px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .empty-cart h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .empty-cart p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #c7a45d;
+            color: #111;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 40px 6%;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .social-icons {
+            margin-top: 18px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 8px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #c7a45d;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .page-title h1 {
+                font-size: 32px;
+            }
+
+            .cart-container {
+                width: 94%;
+            }
+
+            .cart-items {
+                padding: 15px;
+            }
+
+            .cart-item {
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .cart-item img {
+                width: 85px;
+                height: 105px;
+            }
+
+            .product-details h3 {
+                font-size: 16px;
+            }
+
+            .product-price {
+                font-size: 14px;
+            }
+
+            .cart-summary {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .cart-buttons {
+                flex-direction: column;
+            }
+
+            .continue-btn,
+            .checkout-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .remove-btn {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            May KDL_COLLECTION
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Catalogue.html">Catalogue</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+            <a href="cart.html" class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+        </nav>
+
+    </header>
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="page-title">
+
+        <h1>Shopping Cart</h1>
+
+        <p>
+            Review your selected items before checkout.
+        </p>
+
+    </section>
+
+    <!-- ================= CART CONTAINER ================= -->
+
+    <main class="cart-container">
+
+        <div id="cartContent"></div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>May KDL_COLLECTION</h3>
+
+        <p>
+            Classic fashion. Elegant style. Made for you.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+
+        <p style="margin-top:20px;">
+            © 2026 May KDL_COLLECTION. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // Get cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // ================= DISPLAY CART =================
+
+        function displayCart() {
+
+            const cartContent = document.getElementById("cartContent");
+
+            // If cart is empty
+            if (cart.length === 0) {
+
+                cartContent.innerHTML = `
+
+                    <div class="empty-cart">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        <h2>Your cart is empty</h2>
+
+                        <p>
+                            You haven't added any products to your cart yet.
+                        </p>
+
+                        <a href="Catalogue.html" class="shop-btn">
+                            Continue Shopping
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+            // Start cart HTML
+
+            let cartHTML = `
+
+                <div class="cart-items">
+
+            `;
+
+            let total = 0;
+
+            // Loop through products
+
+            cart.forEach((product, index) => {
+
+                const quantity = product.quantity || 1;
+
+                const price = Number(product.price) || 0;
+
+                const itemTotal = price * quantity;
+
+                total += itemTotal;
+
+                cartHTML += `
+
+                    <div class="cart-item">
+
+                        <img
+                            src="${product.image}"
+                            alt="${product.name}"
+                        >
+
+                        <div class="product-details">
+
+                            <h3>
+                                ${product.name}
+                            </h3>
+
+                            <p class="product-category">
+                                ${product.category || "Fashion"}
+                            </p>
+
+                            <p class="product-price">
+                                ₦${price.toLocaleString()}
+                            </p>
+
+                            <!-- QUANTITY CONTROLS -->
+
+                            <div class="quantity-control">
+
+                                <button
+                                    type="button"
+                                    onclick="changeQuantity(${index}, -1)"
+                                >
+                                    −
+                                </button>
+
+                                <span>
+                                    ${quantity}
+                                </span>
+
+                                <button
+                                    type="button"
+                                    onclick="changeQuantity(${index}, 1)"
+                                >
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- REMOVE PRODUCT -->
+
+                        <button
+                            type="button"
+                            class="remove-btn"
+                            onclick="removeItem(${index})"
+                            title="Remove product"
+                        >
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            });
+
+            cartHTML += `
+
+                </div>
+
+                <!-- CART SUMMARY -->
+
+                <div class="cart-summary">
+
+                    <div class="summary-text">
+
+                        <h2>
+                            Cart Total
+                        </h2>
+
+                        <p>
+                            Total for all selected products
+                        </p>
+
+                    </div>
+
+                    <div class="total">
+
+                        ₦${total.toLocaleString()}
+
+                    </div>
+
+                </div>
+
+                <!-- BUTTONS -->
+
+                <div class="cart-buttons">
+
+                    <a
+                        href="Catalogue.html"
+                        class="continue-btn"
+                    >
+                        Continue Shopping
+                    </a>
+
+                    <button
+                        type="button"
+                        class="checkout-btn"
+                        onclick="checkout()"
+                    >
+                        Proceed to Checkout
+                    </button>
+
+                </div>
+
+            `;
+
+            cartContent.innerHTML = cartHTML;
+
+        }
+
+        // ================= CHANGE QUANTITY =================
+
+        function changeQuantity(index, change) {
+
+            cart[index].quantity += change;
+
+            /*
+             * If quantity becomes 0,
+             * remove the product completely.
+             */
+
+            if (cart[index].quantity <= 0) {
+
+                cart.splice(index, 1);
+
+            }
+
+            // Save updated cart
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            // Refresh cart
+
+            displayCart();
+
+        }
+
+        // ================= REMOVE PRODUCT =================
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            displayCart();
+
+        }
+
+        // ================= CHECKOUT =================
+
+        function checkout() {
+
+    // Check whether the cart is empty
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add products first.");
+        return;
+    }
+
+    // YOUR BUSINESS WHATSAPP NUMBER
+    // Replace this example with your real number.
+    // Nigerian numbers should start with 234, without + or spaces.
+    const whatsappNumber = "2348158932511";
+
+    // Prepare the order message
+    let message = "Hello May KDL_COLLECTION! 👋\n\n";
+    message += "I would like to place an order for these products:\n\n";
+
+    let total = 0;
+
+    cart.forEach((product, index) => {
+
+        const price = Number(product.price) || 0;
+        const quantity = Number(product.quantity) || 1;
+        const subtotal = price * quantity;
+
+        total += subtotal;
+
+        message += `${index + 1}. ${product.name}\n`;
+        message += `   Price: ₦${price.toLocaleString("en-NG")}\n`;
+        message += `   Quantity: ${quantity}\n`;
+        message += `   Subtotal: ₦${subtotal.toLocaleString("en-NG")}\n\n`;
+    });
+
+    message += "--------------------------\n";
+    message += `TOTAL: ₦${total.toLocaleString("en-NG")}\n\n`;
+    message += "Please confirm product availability and delivery fees. Thank you!";
+
+    // Encode the message for WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+
+    // Create the WhatsApp link
+    const whatsappURL =
+        `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+}
+
+        // ================= LOAD CART =================
+
+        displayCart();
+
+    </script>
+
+</body>
+</html>

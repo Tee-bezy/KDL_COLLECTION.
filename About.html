@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | May KDL_COLLECTION</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #222;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 75px;
+
+            background: #080808;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #e6c47a;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+
+            font-size: 22px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .about-hero {
+
+            width: 85%;
+            height: 280px;
+
+            margin: 0 auto;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.65),
+                    rgba(0,0,0,0.65)
+                ),
+                url("images/banner.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+
+            margin-bottom: 12px;
+        }
+
+        .about-hero p {
+            font-size: 17px;
+
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           ABOUT INTRO
+        ========================= */
+
+        .about-section {
+
+            width: 85%;
+
+            margin: 40px auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+        .about-image img {
+
+            width: 100%;
+
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 3px;
+        }
+
+        .about-text h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 36px;
+
+            margin-bottom: 20px;
+
+            color: #111;
+        }
+
+        .about-text h2 span {
+            color: #b38a3c;
+        }
+
+        .about-text p {
+
+            line-height: 1.8;
+
+            color: #555;
+
+            margin-bottom: 18px;
+        }
+
+        .about-button {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 12px 25px;
+
+            background: #080808;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 3px;
+        }
+
+        .about-button:hover {
+            background: #b38a3c;
+        }
+
+        /* =========================
+           VALUES
+        ========================= */
+
+        .values {
+
+            background: #eee6d6;
+
+            padding: 50px 7%;
+
+            text-align: center;
+        }
+
+        .values h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .values-intro {
+
+            color: #666;
+
+            margin-bottom: 35px;
+        }
+
+        .value-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .value-card {
+
+            background: white;
+
+            padding: 30px 20px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 4px;
+        }
+
+        .value-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+
+            margin-bottom: 12px;
+
+            font-family: Georgia, serif;
+        }
+
+        .value-card p {
+
+            color: #666;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           STORY
+        ========================= */
+
+        .story {
+
+            width: 85%;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            max-width: 850px;
+        }
+
+        .story h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+        .story p {
+
+            color: #555;
+
+            line-height: 1.9;
+
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+
+            background: #080808;
+
+            color: white;
+
+            padding: 45px 7%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            text-align: center;
+
+            gap: 20px;
+        }
+
+        .stat h2 {
+
+            color: #e6c47a;
+
+            font-size: 35px;
+
+            margin-bottom: 8px;
+        }
+
+        .stat p {
+
+            color: #ccc;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #080808;
+
+            color: white;
+
+            padding: 40px 8%;
+        }
+
+        .footer-container {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 2fr 1fr;
+
+            gap: 40px;
+        }
+
+        footer h3 {
+
+            color: #e6c47a;
+
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+
+            color: #ccc;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            text-decoration: none;
+        }
+
+        .socials {
+
+            display: flex;
+
+            gap: 15px;
+
+            font-size: 20px;
+        }
+
+        .copyright {
+
+            border-top: 1px solid #333;
+
+            margin-top: 30px;
+
+            padding-top: 15px;
+
+            text-align: center;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 0 3%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .about-section {
+
+                width: 92%;
+
+                grid-template-columns: 1fr;
+            }
+
+            .value-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                height: auto;
+
+                padding: 15px;
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+            nav {
+
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .about-hero {
+
+                width: 95%;
+
+                height: 240px;
+            }
+
+            .about-hero h1 {
+
+                font-size: 35px;
+            }
+
+            .about-section {
+
+                width: 92%;
+            }
+
+            .about-image img {
+
+                height: 300px;
+            }
+
+            .value-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <img
+                src="logo.png" 
+                alt="May KDL_COLLECTION Logo">
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="Contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="header-icons">
+
+            <span>⌕</span>
+
+            <span>🛒</span>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         ABOUT HERO
+    ========================== -->
+
+    <section class="about-hero">
+
+        <div>
+
+            <h1>
+                About Us
+            </h1>
+
+            <p>
+                Classy • Modern • Affordable
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         INTRODUCTION
+    ========================== -->
+
+    <section class="about-section">
+
+        <div class="about-image">
+
+            <img
+                src="images/logo.png" width="600" height="200"
+                alt="May KDL_COLLECTION Fashion">
+
+        </div>
+
+        <div class="about-text">
+
+            <h2>
+                Welcome to
+                <span>May KDL_COLLECTION</span>
+            </h2>
+
+            <p>
+                May KDL_COLLECTION is a fashion brand
+                focused on bringing stylish, quality and
+                affordable clothing to our customers.
+            </p>
+
+            <p>
+                From modern men's outfits to elegant
+                women's wear, beautiful hijabs and
+                carefully selected accessories, our
+                collection is designed for different
+                styles and occasions.
+            </p>
+
+            <p>
+                We believe that looking good should not
+                have to be complicated or unnecessarily
+                expensive.
+            </p>
+
+            <a
+                href="index.html"
+                class="about-button">
+
+                Explore Our Catalogue →
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         OUR VALUES
+    ========================== -->
+
+    <section class="values">
+
+        <h2>
+            What We Stand For
+        </h2>
+
+        <p class="values-intro">
+            The principles behind May KDL_COLLECTION
+        </p>
+
+        <div class="value-container">
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Quality
+                </h3>
+
+                <p>
+                    We aim to provide clothing and
+                    accessories that meet our customers'
+                    expectations for quality and style.
+                </p>
+
+            </div>
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ♢
+                </div>
+
+                <h3>
+                    Style
+                </h3>
+
+                <p>
+                    We bring together modern and
+                    classic fashion so you can find
+                    styles that suit your personality.
+                </p>
+
+            </div>
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ₦
+                </div>
+
+                <h3>
+                    Affordability
+                </h3>
+
+                <p>
+                    Our goal is to make fashionable
+                    clothing accessible at prices our
+                    customers can afford.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         OUR STORY
+    ========================== -->
+
+    <section class="story">
+
+        <h2>
+            Our Story
+        </h2>
+
+        <p>
+            May KDL_COLLECTION was created with a simple
+            idea: to make it easier for people to discover
+            clothing that combines style, comfort and value.
+        </p>
+
+        <p>
+            What started as a collection of carefully
+            selected fashion pieces continues to grow into
+            a brand built around customers, creativity and
+            modern fashion.
+        </p>
+
+        <p>
+            Every product we showcase is part of our
+            commitment to helping you dress confidently
+            and express your own style.
+        </p>
+
+    </section>
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <section class="stats">
+
+        <div class="stat">
+
+            <h2>
+                100+
+            </h2>
+
+            <p>
+                Fashion Pieces
+            </p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>
+                50+
+            </h2>
+
+            <p>
+                Styles
+            </p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>
+                24/7
+            </h2>
+
+            <p>
+                Customer Support
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+
+                <h3>
+                    May KDL_COLLECTION
+                </h3>
+
+                <p>
+                    Classy • Modern • Affordable
+                </p>
+
+                <p>
+                    Quality fashion, always.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <p>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </p>
+
+                <p>
+                    <a href="index.html">
+                        Catalogue
+                    </a>
+                </p>
+
+                <p>
+                    <a href="about.html">
+                        About
+                    </a>
+                </p>
+
+                <p>
+                    <a href="#">
+                        Contact
+                    </a>
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <p>
+                    📞 +234 815 893 2511
+                </p>
+
+                <p>
+                    ✉️ maykdlcollection@gmail.com
+                </p>
+
+                <p>
+                    📍 Nigeria
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Follow Us
+                </h3>
+
+                <div class="socials">
+
+                    <span>◎</span>
+
+                    <span>◉</span>
+
+                    <span>♪</span>
+
+                    <span>f</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 May KDL_COLLECTION.
+            All rights reserved.
+
+            <br><br>
+
+            Thank you for supporting our business ❤️
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
